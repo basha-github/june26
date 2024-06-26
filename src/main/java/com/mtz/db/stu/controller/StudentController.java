@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mtz.db.stu.model.Book;
 import com.mtz.db.stu.model.Student;
 import com.mtz.db.stu.service.StudentService;
 
@@ -22,6 +23,14 @@ public class StudentController {
 	public Student addNewStudent(@RequestBody Student stu){
 		
 		return stuService.addNewStudentRecord(stu);
+		
+	}
+	
+	
+	@PostMapping("/mtz/book/new")
+	public Book saveBook(@RequestBody Book book){
+		
+		return stuService.saveNewBook(book);
 		
 	}
 
